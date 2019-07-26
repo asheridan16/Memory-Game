@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="eng">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Memory Game</title>
+        <!--Stylesheet-->
+        <link rel="stylesheet" type="text/css" href="css/main.css">
+        <!--Icons from https://material.io -->
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+        <!--Add Cards to Deck on Load and Event Listeners-->
+        <script>
+            /* Add Cards to Deck */
+            document.addEventListener('DOMContentLoaded', function() {
+                addCards();
+            });
+
+            document.addEventListener('click', function(e) {
+                if (e.target.classList.contains('front') && cardFlip < 2) {
+                    flipped(e);
+                }
+
+                else if (e.target.id == 'res' || e.target.id == 'button'){
+                    restart();
+                }
+            });
+        </script>
+    </head>
+    <body>
+        <!--Title-->
+        <div class="title">
+            <h1>Matching Game</h1>
+        </div>
+
+        <!--Info Bar-->
+        <div class="head">
+            <div class="rating"></div>
+            <p class="info">Moves: 0</p>
+            <p class="timer">Timer: 0:00</p>
+            <p class="restart"><i class='icons md-light' id='res'>refresh</i></p>
+        </div>
+
+        <div class="container">
+            <!--Card Grid-->
+            <ul class="deck"></ul>
+        </div>
+
+        <!--Winner Screen-->
+        <div class="popup">
+            <div class="medal"></div>
+        </div>
+        <!--Rotate Device Screen-->
+        <div class="rotate"></div>
+
+        <!--Javascript File-->
+        <script type="text/javascript" src="js/app.js"></script>
+    </body>
+    <footer>
+        <p>Icons from https://material.io</p>
+    </footer>
+</html>

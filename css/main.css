@@ -1,0 +1,378 @@
+html {
+    box-sizing: border-box;
+}
+
+html, body {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background: #2B303A;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    flex-direction: column;
+}
+
+/* Icons from https://material.io */
+/* Icon Sizes */
+.md-72 {
+    font-size: 72px;
+}
+
+.md-96 {
+    font-size: 96px;
+}
+
+/* Icon Color */
+.md-stars {
+    color: #E7ECEF;
+    text-shadow: 5px 5px 0px black;
+}
+
+.md-light {
+    color: #E7ECEF;
+}
+
+.md-dark {
+    color: black;
+}
+
+/* Icons */
+
+.icons {
+    font-family: 'Material Icons';
+    font-weight: normal;
+    font-style: normal;
+    line-height: 1;
+    letter-spacing: normal;
+    text-transform: none;
+    display: inline-block;
+    white-space: nowrap;
+    word-wrap: normal;
+    direction: ltr;
+    -webkit-font-feature-settings: 'liga';
+    -webkit-font-smoothing: antialiased;
+}
+
+/* Head */
+
+.title {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    margin: auto;
+    text-align: center;
+    font-size: 20px;
+    max-height: 50px;
+    color: #E7ECEF;
+    text-shadow: 4px 4px #0F1108;
+}
+
+.head {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: row;
+    text-align: center;
+    margin: auto;
+    padding: 5px;
+    font-size: 20px;
+    max-height: 50px;
+    max-width: 700px;
+    color: #E7ECEF;
+}
+
+.head h1 {
+    padding-top: 15px;
+    margin: 5px;
+}
+.head p {
+    margin: 0;
+}
+
+.rating {
+    display: flex;
+    justify-content: center;
+    width: 15%;
+}
+
+.info {
+    width: 25%;
+}
+
+.timer {
+    width: 25%;
+}
+.restart {
+    width: 15%;
+    align-content: center;
+}
+
+/* Deck and Cards */
+
+.deck {
+    width: 620px;
+    min-height: 620px;
+    background: #46B1C9;
+    border-radius: 25px;
+    padding: 15px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    perspective: 600px;
+}
+
+.card {
+    width: 145px;
+    height: 145px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #2B303A;
+    border-radius: 10px;
+    color: white;
+    font-size: 0px;
+    position: relative;
+    transition: transform 1s;
+    transform-style: preserve-3d;
+}
+
+/* Flip Cards Animation */
+.card.is-flipped {
+    transform: rotateY(180deg);
+}
+
+.card_face {
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    backface-visibility: hidden;
+}
+
+.front {
+    border-radius: 10px;
+    border: 2px dashed #46B1C9;
+    box-sizing: border-box;
+    height: 135px;
+    width: 137px;
+}
+
+.front:hover {
+    cursor: pointer;
+}
+
+.back {
+    background: #0F1108;
+    border-radius: 10px;
+    font-size: 48px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 48px;
+    color: white;
+    transform: rotateY(180deg);
+}
+
+.matched {
+    border-radius: 10px;
+    font-size: 48px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 48px;
+    color: white;
+}
+
+/* Win Screen */
+.pop {
+    position: fixed;
+    top: 0;
+    left: 0;
+    background: rgba(1, 1, 1, .5);
+    display: flex;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    padding: 5px;
+}
+
+.show {
+    background-color: #2B303A;
+    box-shadow: 8px 5px 20px 5px black;
+    width: 90%;
+    height: 50%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+    margin: auto;
+    padding: 5px;
+    font-size: 20px;
+}
+
+.winner {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    font-size: xx-large;
+    color: #E7ECEF;
+}
+
+.winner h1 {
+    width: 100%;
+    text-shadow: 4px 4px #0F1108;
+}
+
+.starRating {
+    display: flex;
+    justify-content: center;
+    margin: -45px auto;
+    width: 100%;
+}
+
+.finalMoves {
+    width: 50%;
+    padding-top: 20px;
+}
+
+.totalTime {
+    width: 50%;
+    padding-top: 20px;
+}
+
+.button {
+    width: 100%;
+    justify-content: center;
+    padding-top: 50px;
+    display: flex;
+    align-items: flex-end;
+}
+
+.b {
+    background: rgb(44, 140, 224);
+    color: #E7ECEF;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    border: 0.16em solid rgb(255, 255, 255, 0);
+    border-radius: 25px;
+    padding: 15px 32px;
+    margin: 4px 2px;
+    cursor: pointer;
+    height: 50px;
+    width: 250px;
+    transition: all 0.2s;
+}
+
+.b:hover {
+    border-color: rgb(255, 255, 255, 1);
+}
+
+/* Responsive */
+
+@media screen and (max-width: 315px) and (orientation: portrait){
+    .rotate {
+        position: fixed;
+        background: #212121 url(../images/rotate.png) no-repeat center;
+        background-size: 85%;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        opacity: 1;
+    }
+}
+
+@media screen and (max-width: 700px){
+    .deck {
+        width: 465px;
+        min-height: 400px;
+        padding: 15px;
+    }
+
+    .card {
+        width: 110px;
+        height: 110px;
+        margin: 5px 1px;
+    }
+
+    .front {
+        height: 105px;
+        width: 107px;
+    }
+}
+
+@media screen and (min-width: 600px) and (max-width: 699px){
+    .deck {
+        width: 545px;
+        padding: 20px;
+    }
+}
+
+@media screen and (min-width: 450px) and (max-width: 599px){
+    .deck {
+        width: 455px;
+        padding: 15px;
+    }
+}
+
+@media screen and (max-width: 450px){
+    .card {
+        width: 85px;
+        height: 85px;
+        margin: 5px auto;
+    }
+
+    .front {
+        height: 75px;
+        width: 77px;
+    }
+}
+
+@media screen and (min-width: 400px) and (max-width: 449px){
+    .deck {
+        width: 365px;
+        padding: 10px;
+    }
+}
+
+@media screen and (min-width: 335px) and (max-width: 399px){
+    .deck {
+        width: 300px;
+        padding: 10px;
+    }
+}
+
+@media screen and (min-width: 315px) and (max-width: 334px){
+    .deck {
+        width: 275px;
+        padding: 10px;
+    }
+
+    .rating {
+        margin-left: 10px;
+    }
+
+    .winner {
+        font-size: larger;
+    }
+
+    .finalMoves {
+        width: 100%;
+    }
+
+    .totalTime{
+        width: 100%;
+    }
+}
